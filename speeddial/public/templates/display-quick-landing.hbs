@@ -1,0 +1,30 @@
+
+<ul class="quick-landing">
+	<li>
+		<input id="saved-pages" name="nav-saved-pages" type="checkbox" data-storage="nav-saved-pages" {{#if nav-saved-pages}}checked="checked"{{/if}}/>
+		<label for="saved-pages">saved pages</label>
+	</li>
+	<li>
+		<input id="default" type="radio" value="/default.aspx" name="landing-page" data-storage="landing-page" {{#ifCond landing-page '==' '/default.aspx'}}checked="checked"{{/ifCond}}/>
+		<label for="default">default</label>
+	</li>
+	<li>
+		<input id="location-1" type="radio" value="/location-1" name="landing-page" data-storage="landing-page" {{#ifCond landing-page '==' '/location-1'}}checked="checked"{{/ifCond}}/>
+		<label for="location-1">location-1</label>
+	</li>
+	<li>
+		<input id="location-2" type="radio" value="/location-2" name="landing-page" data-storage="landing-page" {{#ifCond landing-page '==' '/location-2'}}checked="checked"{{/ifCond}}/>
+		<label for="location-2">location-2</label>
+	</li>
+	<li>
+		<input id="location-3" type="radio" value="/location-3" name="landing-page" data-storage="landing-page" {{#ifCond landing-page '==' '/location-3'}}checked="checked"{{/ifCond}}/>
+		<label for="location-3">location-3</label>
+	</li>
+	{{#if landing-page-custom}}
+		<li>
+			<input id="custom" type="radio" value="{{landing-page-custom}}" name="landing-page" data-storage="landing-page" {{#ifCond landing-page '==' 'custom'}}checked="checked"{{/ifCond}}/>
+			<label for="custom">{{landing-page-custom}}</label>
+		</li>
+	{{/if}}
+
+</ul>

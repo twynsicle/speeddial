@@ -1,0 +1,24 @@
+<div class="sites" data-type="favourites">
+	<div class="site-container">
+
+		{{#isEmpty .}}
+			<p class="no-favourites-message">
+				no favourites selected, click the star next to a site name to add
+			</p>
+		{{/isEmpty}}
+
+		{{#isNotEmpty .}}
+			{{#each .}}
+				{{#unless placeholder}}
+					{{#if mobile-url}}
+						<div class="brand-4">{{partial "multi-site" this ../../../../this}}</div>
+					{{/if}}
+					{{#unless mobile-url}}
+						{{partial "single-site" this ../../../../this}}
+					{{/unless}}
+				{{/unless}}
+			{{/each}}
+
+		{{/isNotEmpty}}
+	</div>
+</div>

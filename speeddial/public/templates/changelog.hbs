@@ -1,0 +1,14 @@
+
+{{#each logs}}
+	<article>
+		<header>
+			<h3>Version {{version}}</h3>
+			<h5>{{date}}</h5>
+		</header>
+		<ul>
+			{{#each changes}}
+				<li>{{.}}</li>
+			{{/each}}
+		</ul>
+	</article>
+{{/each}}

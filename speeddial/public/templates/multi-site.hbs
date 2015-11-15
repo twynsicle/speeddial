@@ -1,0 +1,40 @@
+
+<section class="site multi {{name}}" data-name="{{name}}">
+
+	<a class="tile desktop" href="{{url}}" data-local-link="{{toLocalUrl url local-postfix}}" data-prod-link="{{url}}" {{keepLanding keep-landing}}>
+		{{#unless image-path-override}}
+			<img src="/images/{{parent.abr}}/{{name}}.jpg" alt="{{name}}"/>
+		{{/unless}}
+		{{#if image-path-override}}
+			<img src="{{image-path-override}}" alt="{{name}}"/>
+		{{/if}}
+	</a>
+	<a class="tile mobile" href="{{mobile-url}}" data-local-link="{{toLocalUrl mobile-url local-postfix}}" data-prod-link="{{mobile-url}}" {{keepLanding keep-landing}} >
+		{{#unless mobile-image-path-override}}
+			<img src="/images/{{parent.abr}}/{{mobile-image}}.jpg" alt="{{name}} mobile"/>
+		{{/unless}}
+		{{#if mobile-image-path-override}}
+			<img src="{{mobile-image-path-override}}" alt="{{name}}"/>
+		{{/if}}
+	</a>
+
+	<div class="details">
+		<img src="/images/icons/favourite.png" class="favourite-icon" />
+		<a class="name" href="{{toLocalUrl url local-postfix}}" data-local-link="{{toLocalUrl url local-postfix}}" data-prod-link="{{url}}" {{keepLanding keep-landing}}>{{name}}</a>
+		{{#if no-admin}}
+			<span class="spacer">spacer</span>
+		{{/if}}
+		{{#unless no-admin}}
+			{{#if admin-link}}
+				<a class="admin" href="{{admin-link}}" data-local-link="{{admin-link-local}}" data-prod-link="{{admin-link}}">
+					admin
+				</a>
+			{{/if}}
+			{{#unless admin-link}}
+				<a class="admin" href="{{toHttps url}}/admin" data-local-link="{{toLocalUrl url local-postfix}}/admin" data-prod-link="{{toHttps url}}/admin">
+					admin
+				</a>
+			{{/unless}}
+		{{/unless}}
+	</div>
+</section>

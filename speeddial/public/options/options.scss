@@ -1,0 +1,168 @@
+
+@mixin clearfix() {
+  visibility: hidden;
+  display: table;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/* Page layout, header */
+
+.main-container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+header.page-header {
+  margin-bottom: 30px;
+  border-bottom: 1px solid lightgrey;
+
+  &:after {content:''; display: table; clear:both;}
+
+  h1 {float:left;}
+  nav {float:right;&:after{@include clearfix;}}
+
+  h3{
+    position: relative;top: 6px;
+    cursor: pointer;
+    margin-left: 15px;
+    color: black; text-decoration: none;
+    float:right;
+    &:hover {color: rgba(0,0,0,0.54);}
+    &.active {color: rgba(0,0,0,0.54);}
+  }
+}
+
+/* Options styling */
+
+ul {
+  margin: 0 0 0 20px;
+  padding: 0;
+  list-style:none;
+}
+
+li {margin: 20px 0 20px 0;}
+
+h2 {margin-bottom: 14px;}
+
+.click-options label{
+  width: 72px;
+  display:inline-block;
+  margin: 0 0 10px 0;
+}
+
+.default-page label{
+  display: block;
+  margin: 0 0 0 20px;
+  float: left;
+}
+
+li.default-page:after{
+  content:''; display: table; clear: both;
+}
+.default-page input {
+  margin-right: 10px;
+}
+
+.landing-page label{
+  display: block;
+  margin: 0 0 15px 20px;
+  height: 20px;
+  width: 250px;
+}
+.landing-page input {
+  margin-right: 10px;
+}
+.landing-page input[type=text] {
+   margin-left: 10px;
+}
+
+/* Changelog */
+#changelog {
+  article {
+    margin-bottom: 30px;
+  }
+  header {
+    margin-bottom: 8px;
+    h3 { font-size: 16px; margin: 0 10px 0 0; display: inline;}
+    h5{display: inline; font-style: italic; font-weight: normal;}
+  }
+  ul{
+    margin:0 0 0 5px;
+  }
+  li {
+    margin: 0 0 5px 0;
+  }
+}
+
+/* Saved pages & custom-links */
+#saved-pages, #custom-links {
+  p {
+    margin: 0 0 3px 0;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    &:first-of-type {
+      margin-top: 10px;
+    }
+  }
+  button{
+    margin-top: 10px;
+  }
+
+  h2{margin: 20px 0 10px 0;}
+
+  tr td:first-child a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  .options span{
+    &:hover {color: rgba(0,0,0,0.54);}
+    cursor: pointer;
+    margin-right: 7px;
+  }
+}
+
+#saved-pages {
+  table {
+    width: 100%
+  }
+
+  tr td:nth-child(2), tr th:nth-child(2) {
+    padding: 0 15px;
+  }
+
+}
+
+/* custom links */
+#custom-links {
+  table {
+    margin-bottom: 20px;
+  }
+
+  td:first-child {width: 70px;}
+  td:nth-child(2) {width: 300px;}
+
+  td, th {
+    padding: 3px 10px;
+    height: 25px;
+  }
+
+  .drag-reminder {
+    font-style: italic;
+    margin-left: 37px;
+  }
+
+  input[type=text] {
+    width: 100%
+  }
+}

@@ -1,0 +1,66 @@
+{
+	"sites-1": {
+		"name": "sites-1",
+		"abr": "sites-1",
+		"layout": "pdt-layout",
+		"sites": [
+			{"name": "site-1","url": "http://site-1.abc"},
+			{"name": "site-2","url": "http://site-2.abc"},
+			{"name": "site-3","url": "http://site-3.abc"},
+			{"name": "site-4","url": "http://site-4.abc"},
+			{"name": "site-5","url": "http://site-5.abc"},
+			{"name": "site-6","url": "http://site-6.abc"},
+			{"name": "site-7","url": "http://site-7.abc"},
+			{"name": "site-8","url": "http://site-8.abc"},
+			{"name": "site-9","url": "http://site-9.abc"}
+		]
+	},
+	"sites-2": {
+		"name": "sites-2",
+		"abr": "sites-2",
+		"layout": "pdt-layout",
+		"sites": [
+			{"name": "site-10","url": "http://site-10.abc"},
+			{"name": "site-11","url": "http://site-11.abc"},
+			{"name": "site-12","url": "http://site-12.abc"},
+			{"name": "site-13","url": "http://site-13.abc"},
+			{"name": "site-14","url": "http://site-14.abc"},
+			{"name": "site-15","url": "http://site-15.abc"},
+			{"name": "site-16","url": "http://site-16.abc"},
+			{"name": "site-17","url": "http://site-17.abc"},
+			{"name": "site-18","url": "http://site-18.abc"},
+			{"name": "site-19","url": "http://site-19.abc"}
+		]
+	},
+
+	"sites-group-1": {
+		"name": "sites-group-1",
+		"abr": "sites-group-1",
+		"layout": "brand-layout",
+		"logo": "",
+		"brands": [
+			{
+				"name": "group-1",
+				"sites": [
+					{"name": "group-1-site-1", "url": "http://group-1-site-1.abc"},
+					{"name": "group-1-site-2", "url": "http://group-1-site-2.abc"}
+				]
+			},
+			{
+				"name": "group-2",
+				"sites": [
+					{"name": "group-2-site-1", "url": "http://group-2-site-1.abc"},
+					{"name": "group-2-site-2", "url": "http://group-2-site-2.abc"},
+					{"name": "group-2-site-3", "url": "http://group-2-site-3.abc"}
+				]
+			},
+			{
+				"name": "group-3",
+				"sites": [
+					{"name": "group-3-site-1", "url": "http://group-3-site-1.abc"},
+					{"name": "group-3-site-2", "url": "http://group-3-site-2.abc"}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Libs -->
+	<link href="chrome_shared.css" rel="stylesheet" type="text/css" media="all">
+	<link href="widgets.css" rel="stylesheet" type="text/css" media="all">
+
+	<link href="options.css" rel="stylesheet" type="text/css" media="all">
+	<title>Speeddial Options Page</title>
+</head>
+<body>
+
+<div class="main-container">
+
+	<header class="page-header">
+		<h1>Speeddial Options</h1>
+		<nav>
+			<h3 data-tab-pane="changelog">changelog</h3>
+			<h3 data-tab-pane="saved-pages">saved pages</h3>
+			<h3 data-tab-pane="custom-links">custom links</h3>
+			<h3 data-tab-pane="options" class="active">options</h3>
+		</nav>
+	</header>
+
+	<div class="tab-container">
+		<section class="tab-content default" id="options">
+			<ul>
+				<li class="general-options">
+					<h2>General Options</h2>
+					<li>
+						<label><input name="no-slide" type="checkbox" data-storage="no-slide"/> Don't slide between pages.</label>
+					</li>
+					<li>
+						<label><input name="show-scrollbar" type="checkbox" data-storage="show-scrollbar"/> Show scrollbar.</label>
+					</li>
+					<li>
+						<label><input name="hide-options-link" type="checkbox" data-storage="hide-options-link"/> Hide options link.</label>
+					</li>
+					<li>
+						<label>
+							Path to admin
+							<input type="text" name="admin-link"  data-storage="admin-link" placeholder="/admin-folder"/>
+						</label>
+					</li>
+					<li>
+						<button type="button" id="clear-settings">clear everything</button>
+					</li>
+				</li>
+				<li class="click-options">
+					<h2>Click Options</h2>
+					<ul>
+						<li>
+							<label for="left-click">left click:</label>
+							<select id="left-click" name="left-click" data-storage="left-click">
+								<option value="local">local</option>
+								<option value="production">production</option>
+								<option value="none">none</option>
+								<option value="local-admin">local admin</option>
+								<option value="production-admin">production admin</option>
+							</select>
+						</li>
+
+						<li>
+							<label for="middle-click">middle click:</label>
+							<select id="middle-click" name="middle-click" data-storage="middle-click">
+								<option value="local">local</option>
+								<option value="production">production</option>
+								<option value="none">none</option>
+								<option value="local-admin">local admin</option>
+								<option value="production-admin">production admin</option>
+							</select>
+						</li>
+
+						<li>
+							<label for="right-click">right click:</label>
+							<select id="right-click" class="right-click" data-storage="right-click">
+								<option value="local">local</option>
+								<option value="production">production</option>
+								<option value="none">none</option>
+								<option value="local-admin">local admin</option>
+								<option value="production-admin">production admin</option>
+							</select>
+						</li>
+						<li>
+							<label style="width: 240px;"><input name="trap-middle-click" type="checkbox" data-storage="trap-middle-click"/> Prevent middle click opening in new tab.</label>
+						</li>
+					</ul>
+				</li>
+				<li class="default-page">
+					<h2>Default Page</h2>
+					<label><input type="radio" value="favourites" name="default-page" data-storage="default-page"/>favourites</label>
+					<label><input type="radio" value="sites-1" name="default-page" data-storage="default-page"/>sites-1</label>
+					<label><input type="radio" value="sites-2" name="default-page" data-storage="default-page"/>sites-2</label>
+					<label><input type="radio" value="sites-group-1" name="default-page" data-storage="default-page"/>sites-group-1</label>
+					<label><input type="radio" value="last-page" name="default-page" data-storage="default-page"/>last used</label>
+				</li>
+				<li class="landing-page">
+					<h2>Landing Page</h2>
+
+					<label style="width: 300px;"><input name="show-quick-landing" type="checkbox" data-storage="show-quick-landing"/> Show landing selection at bottom of speed dial</label>
+					<label><input type="radio" value="/default.aspx" name="landing-page" data-storage="landing-page"/>/default.aspx</label>
+					<label><input type="radio" value="/location-1" name="landing-page" data-storage="landing-page"/>/location-1</label>
+					<label><input type="radio" value="/location-2" name="landing-page" data-storage="landing-page"/>/location-2</label>
+					<label><input type="radio" value="/location-3" name="landing-page" data-storage="landing-page"/>/location-3</label>
+					<label><input type="radio" value="custom" name="landing-page" data-storage="landing-page"/>
+						custom <input type="text" name="landing-page-custom"  data-storage="landing-page-custom" placeholder="/default.aspx"/>
+					</label>
+				</li>
+				<li>
+					<h2>Favorite Options</h2>
+					<ul class="options-group">
+						<li>
+							<label><input name="disable-favourites" type="checkbox" data-storage="disable-favourites"/> Disable favourites.</label>
+						</li>
+						<li>
+							<button type="button" id="clear-favourites">clear favourites</button>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h2>Cache Options</h2>
+					<ul class="options-group">
+						<li>
+							<label><input name="enable-cache" type="checkbox" data-storage="enable-cache"/> Enable Caching (experimental)</label>
+						</li>
+						<li>
+							<button type="button" id="clear-cache">clear cache</button>
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+
+		</section>
+		<section class="tab-content" id="custom-links">
+
+			<p>Allows you to create custom links displayed beneath the speed dial. <br/>
+				This should be useful for adding links to CRM, Trello, eStarmail etc
+			</p>
+			<label><input name="show-custom-links" type="checkbox" data-storage="show-custom-links"/> Enable.</label>
+
+			<h2>Custom links</h2>
+		</section>
+		<section class="tab-content" id="saved-pages">
+
+			<p>Saving pages allows you to save pages by clicking the floppy disc in the url bar. Opening a site from the speed dial will then take you to the last save page.</p>
+			<p>This should be useful to save navigating to test products, or to easily return to a particular area of the site you are working on.</p>
+			<p>Note: this overrides the landing page setting when a saved page is available.</p>
+
+			<label><input name="nav-saved-pages" type="checkbox" data-storage="nav-saved-pages"/> Enable.</label>
+			<label><input name="highlight-saved-pages" type="checkbox" data-storage="highlight-saved-pages"/> Outline sites with a saved page.</label>
+			<label><input name="extra-highlight-saved-pages" type="checkbox" data-storage="extra-highlight-saved-pages"/> Make saved pages even more obvious.
+				<input type="color" name="color-highlight-saved-pages" data-storage="color-highlight-saved-pages"/>
+			</label>
+			<button type="button" id="clear-saved-pages">clear all</button>
+			<h2>Saved Pages</h2>
+		</section>
+		<section class="tab-content" id="changelog"></section>
+	</div>
+</div>
+
+</body>
+
+<script src="../js/libs/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="../js/libs/handlebars.runtime-v2.0.0.js"></script>
+<script src="../templates/templates.js"></script>
+<script type="text/javascript" src="../js/helpers.js"></script>
+<script type="text/javascript" src="../js/Utils.js"></script>
+<script type="text/javascript" src="../js/libs/jquery-ui.min.js"></script>
+<script src="../js/libs/SettingsManager.js"></script>
+<script src="options.js"></script>
+</html>

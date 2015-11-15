@@ -1,0 +1,23 @@
+<table>
+	<tr>
+		<th>site</th>
+		<!--<th>url</th>-->
+		<th>saved path</th>
+		<th>options</th>
+	</tr>
+
+	{{#each .}}
+		<tr>
+			<td><a href="{{url}}">{{name}}</a></td>
+			<td>
+				{{#if path}}<a href="{{url}}{{path}}">{{path}}</a>{{/if}}
+			</td>
+			<td class="options">
+				{{#if path}}
+					<span class="delete-saved-path" data-site-url="{{url}}">delete</span>
+				{{/if}}
+			</td>
+		</tr>
+	{{/each}}
+
+</table>

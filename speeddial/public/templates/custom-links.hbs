@@ -1,0 +1,25 @@
+
+<table>
+	<tr>
+		<th>name</th>
+		<th>url</th>
+		<th>options</th>
+	</tr>
+
+	{{#each .}}
+		<tr>
+			<td>{{name}}</td>
+			<td>
+				<a href="{{url}}">{{url}}</a>
+			</td>
+			<td class="options">
+				<span class="edit-custom-link" data-link-name="{{name}}">edit</span>
+				<span class="delete-custom-link" data-link-name="{{name}}">delete</span>
+			</td>
+		</tr>
+	{{/each}}
+
+</table>
+
+<button class="add-custom-link">add link</button>
+<span class="drag-reminder">drag name to change order</span>

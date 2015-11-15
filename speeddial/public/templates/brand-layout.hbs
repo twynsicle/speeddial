@@ -1,0 +1,30 @@
+
+<div class="sites" data-type="{{name}}">
+	{{#if logo}}
+		<header class="group">
+			<img src="{{logo}}" alt="logo"/>
+		</header>
+	{{/if}}
+
+	<div class="site-container">
+		{{#each brands}}
+			<div class="brand-{{countVisibleBrands ../this}} {{name}}" {{isHidden hidden}}>
+
+				{{#each sites}}
+					{{#if placeholder}}
+						{{partial "placeholder-site" this ../../../this}}
+					{{/if}}
+					{{#unless placeholder}}
+						{{#if mobile-url}}
+							{{partial "multi-site" this ../../../../this}}
+						{{/if}}
+						{{#unless mobile-url}}
+							{{partial "single-site" this ../../../../this}}
+						{{/unless}}
+					{{/unless}}
+				{{/each}}
+
+			</div>
+		{{/each}}
+	</div>
+</div>
